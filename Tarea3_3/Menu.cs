@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Tarea3_3
 {
-    public partial class Principal : Form
+    public partial class Menu : Form
     {
-        public Principal()
+        public Menu()
         {
             InitializeComponent();
-        }
-
-        private void btnIniciar_Click(object sender, EventArgs e)
-        {
-          
-            iniciarSesion iniciar = new iniciarSesion();
-            iniciar.Show();
-            this.Hide();
         }
     }
 }

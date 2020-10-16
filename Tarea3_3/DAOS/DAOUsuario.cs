@@ -70,19 +70,19 @@ namespace Tarea3_3.DAOS
         }
 
         //Verificar usuario registrado (LOGIN)
-        public Usuario Verificarusuario(string email, string contraseña)
+        public Usuario Verificarusuario(string username, string contraseña)
         {
             MySqlConnection conexion = null;
             try
             {
                 conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
                 conexion.Open();
-                String consulta = "SELECT *  FROM Usuario WHERE Username = @Username AND password = @Contraseña"+";";
+                String consulta = "SELECT *  FROM Usuario WHERE Username = @Username AND password = @Password"+";";
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;
               
-                comando.Parameters.AddWithValue("@Username", email);
+                comando.Parameters.AddWithValue("@Username", username);
                 comando.Parameters.AddWithValue("@Password", contraseña);
                 MySqlDataReader lector = comando.ExecuteReader();
                 Usuario obtenerdatosusuario;
@@ -91,9 +91,11 @@ namespace Tarea3_3.DAOS
                     obtenerdatosusuario = new Usuario();
                     obtenerdatosusuario.IDUsuario = lector.GetInt32("idusuario");
                     obtenerdatosusuario.Nombre = lector.GetString("Nombre");
-                    obtenerdatosusuario.Apellido = lector.GetString("Apellidos");
-                    obtenerdatosusuario.Email = lector.GetString("email");
-                    obtenerdatosusuario.Descripcion = lector.GetString("tipousuario");
+                    obtenerdatosusuario.Apellido = lector.GetString("Apellido");
+                    obtenerdatosusuario.Username = lector.GetString("Username");
+                    obtenerdatosusuario.Email = lector.GetString("Email");
+                    obtenerdatosusuario.Contraseña = lector.GetString("Password");
+                    obtenerdatosusuario.Descripcion = lector.GetString("Descripcion");
                     
                     return obtenerdatosusuario;
                 }
