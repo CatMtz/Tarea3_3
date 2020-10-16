@@ -110,6 +110,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dll\MySql.Data.dll" />
+    <None Include="IMG\Candado.png" />
+    <None Include="IMG\Candado.jpeg" />
     <Content Include="IMG\Circuito.jpg" />
     <Content Include="IMG\Gato.jpg" />
   </ItemGroup>
