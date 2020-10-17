@@ -16,5 +16,18 @@ namespace Tarea3_3.Modelos
         public String Email { get; set; }
         public String Contraseña { get; set; }
         public String Descripcion { get; set; }
+
+
+        public Usuario() { }
+        public Usuario(String nom, String ape, String user, String ema, String cont, String desc)
+        {
+            this.Nombre = nom;
+            this.Apellido = ape;
+            this.Username = user;
+            this.Email = ema;
+            this.Contraseña = cont;
+            this.Descripcion = desc;
+        }
+
     }
 }

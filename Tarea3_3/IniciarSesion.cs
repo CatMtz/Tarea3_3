@@ -87,5 +87,10 @@ namespace Tarea3_3
             }
 
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

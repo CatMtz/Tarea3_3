@@ -45,8 +45,8 @@ namespace Tarea3_3.DAOS
             {
                 MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
                 conexion.Open();
-                String consulta = "INSERT INTO Usuario(Nombre, Apellido, Username, Email, Password,Descripcion) "
-                    + "VALUES (default,@Nombre, @Apellido, @Username, @Email, @Contraseña, @Descripcion)";
+                String consulta = "INSERT INTO Usuario "
+                    + "VALUES (default,@Nombre, @Apellido, @Username, @Email, @Contraseña, @Descripcion)"+";";
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;
@@ -55,9 +55,9 @@ namespace Tarea3_3.DAOS
                 comando.Parameters.AddWithValue("@Apellido", obj.Apellido);
                 comando.Parameters.AddWithValue("@Username", obj.Username);
                 comando.Parameters.AddWithValue("@Email", obj.Email);
-                comando.Parameters.AddWithValue("@Password", obj.Contraseña);
+                comando.Parameters.AddWithValue("@Contraseña", obj.Contraseña);
                 comando.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
-                int regafectados = (int)comando.ExecuteNonQuery();
+                int regafectados = comando.ExecuteNonQuery();
                 conexion.Close();
                 return (regafectados > 0);
 
