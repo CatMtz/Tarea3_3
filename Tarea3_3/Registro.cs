@@ -16,5 +16,13 @@ namespace Tarea3_3
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+            Principal pri = new Principal();
+            pri.Show();
+            this.Dispose();
+        }
     }
 }

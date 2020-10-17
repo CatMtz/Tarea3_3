@@ -24,5 +24,17 @@ namespace Tarea3_3
             iniciar.Show();
             this.Hide();
         }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            Registro registro = new Registro();
+            registro.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
