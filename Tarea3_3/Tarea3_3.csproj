@@ -50,7 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Añadir_Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Añadir_Mensaje.Designer.cs">
+      <DependentUpon>Añadir_Mensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConexionMySQL.cs" />
+    <Compile Include="DAOS\DAOMensaje.cs" />
     <Compile Include="DAOS\DAOUsuario.cs" />
     <Compile Include="IniciarSesion.cs">
       <SubType>Form</SubType>
@@ -64,6 +71,13 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mis_Mensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mis_Mensajes.Designer.cs">
+      <DependentUpon>Mis_Mensajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Mensaje.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -81,6 +95,12 @@
     </Compile>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mis_Mensajes.resx">
+      <DependentUpon>Mis_Mensajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

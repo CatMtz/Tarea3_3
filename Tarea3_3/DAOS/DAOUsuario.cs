@@ -46,7 +46,7 @@ namespace Tarea3_3.DAOS
                 MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
                 conexion.Open();
                 String consulta = "INSERT INTO Usuario "
-                    + "VALUES (default,@Nombre, @Apellido, @Username, @Email, @Contraseña, @Descripcion)"+";";
+                    + "VALUES (default,@Nombre, @Apellido, @Username, @Email, Sha1(@Contraseña), @Descripcion)"+";";
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;
@@ -77,7 +77,7 @@ namespace Tarea3_3.DAOS
             {
                 conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
                 conexion.Open();
-                String consulta = "SELECT *  FROM Usuario WHERE Username = @Username AND password = @Password"+";";
+                String consulta = "SELECT *  FROM Usuario WHERE Username = @Username AND password = Sha1(@Password)"+";";
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;

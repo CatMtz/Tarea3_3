@@ -14,6 +14,7 @@ namespace Tarea3_3
 {
     public partial class iniciarSesion : Form
     {
+        public int idusu=0;
         public iniciarSesion()
         {
             InitializeComponent();
@@ -75,9 +76,10 @@ namespace Tarea3_3
 
           if(usu.Verificarusuario(txtNombre.Text, txtPassword.Text)!=null)
             {
+               new Menu( idusu = usu.Verificarusuario(txtNombre.Text, txtPassword.Text).IDUsuario);
                 Menu menu = new Menu();
                 menu.Show();
-                this.Dispose();
+                this.Hide();
             }
           else
             {
