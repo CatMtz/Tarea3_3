@@ -32,6 +32,7 @@ namespace Tarea3_3
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Añadir_Mensaje nuevo = new Añadir_Mensaje();
+            new Añadir_Mensaje(idusuario);
             nuevo.Show();
             this.Hide();
         }

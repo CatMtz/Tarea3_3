@@ -161,16 +161,29 @@ namespace Tarea3_3
             if(txtNombre.Text!="Nombre"&& txtApellido.Text != "Apellido" && txtUsername.Text != "Username" &&
                 txtEmail.Text != "Email" && txtContraseña.Text != "Contaseña" && txtConfirmar.Text != "Confirmar Contraseña")
             {
-                if (txtContraseña.Text == txtConfirmar.Text)
+                if (txtContraseña.Text.Length>2 && txtContraseña.Text.Length <= 5)
                 {
-                    Usuario nuevo = new Usuario(txtNombre.Text, txtApellido.Text, txtUsername.Text,
-                  txtEmail.Text, txtContraseña.Text, txtDescripcion.Text);
-                    usu.registrar(nuevo);
-                }
-                else
+                    if (txtContraseña.Text == txtConfirmar.Text)
+                    {
+                        Usuario nuevo = new Usuario(txtNombre.Text, txtApellido.Text, txtUsername.Text,
+                      txtEmail.Text, txtContraseña.Text, txtDescripcion.Text);
+                        usu.registrar(nuevo);
+                        txtNombre.Text = "";
+                        txtApellido.Text = "";
+                        txtUsername.Text = "";
+                        txtEmail.Text = "";
+                        txtContraseña.Text = "";
+                        txtConfirmar.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las contraseñas no coinciden");
+                    }
+                }else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden");
+                    MessageBox.Show("La contraseña debe ser entre 2 y 5 caracteres");
                 }
+               
               
             }
             else

@@ -40,6 +40,7 @@ namespace Tarea3_3
 
         private void btnDesenc_Click(object sender, EventArgs e)
         {
+            
             grvMisMensajes.DataSource = null;
             grvMisMensajes.DataSource = new DAOMensaje().getOne("" + idusu);
 

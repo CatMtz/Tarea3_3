@@ -75,14 +75,14 @@ namespace Tarea3_3.DAOS
             {
                 MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
                 conexion.Open();
-                String consulta = "INSERT INTO Mensajes "
-                    + "VALUES (default,HEX(aes_encrypt('@Mensaje','#$%&1234kkomg'), @IDUsuario)" + ";";
+                String consulta = "INSERT INTO mensajes "+
+                    "VALUES(default,HEX(aes_encrypt(@Mensaje,'#$%&1234kkomg')),@IDUsuario)" + ";";
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.Parameters.AddWithValue("@Mensaje", obj.Mensajee);
-                comando.Parameters.AddWithValue("@IDUsario", obj.IdUsuario);
+                comando.Parameters.AddWithValue("@IDUsuario", obj.IdUsuario);
                
                 int regafectados = comando.ExecuteNonQuery();
                 conexion.Close();
